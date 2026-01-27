@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Award Submission Form</title>
+    <style>
+        :root {
+            --brand-red: #8B2323;
+            --white: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--brand-red);
+            color: var(--white);
+            overflow-x: hidden;
+        }
+
+        .header {
+            background-color: white;
+            padding: 10px 40px;
+        }
+        .header img {
+            height: 60px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 90vh;
+            padding: 60px;
+            gap: 40px;
+            position: relative;
+        }
+
+        .info-section h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        .info-section p {
+            max-width: 400px;
+            line-height: 1.6;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        .deadline {
+            margin-top: 40px;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .form-section {
+            max-height: 80vh;
+            overflow-y: auto;
+            padding-right: 20px;
+        }
+
+        input[type="text"], 
+        input[type="email"], 
+        textarea {
+            width: 100%;
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.5);
+            padding: 12px;
+            margin-bottom: 20px;
+            color: white;
+            box-sizing: border-box;
+        }
+
+        .award-item {
+            margin-bottom: 30px;
+        }
+
+        .award-label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .award-label input {
+            margin-right: 10px;
+        }
+
+        .btn-success {
+            background-color: white;
+            color: #333;
+            padding: 15px 30px;
+            border: none;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            width: fit-content;
+        }
+
+        .corner-icon {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 120px;
+            height: 120px;
+            background-color: white;
+            clip-path: polygon(100% 0, 100% 100%, 0 100%);
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        .form-section::-webkit-scrollbar { width: 5px; }
+        .form-section::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.3); }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <img src="logo.png" alt="Logo">
+    </div>
+
+    <div class="container">
+        <div class="info-section">
+            <h1>Submission</h1>
+            <p>All details of submissions will be kept strictly private and confidential by Mailman and will not be used for any purpose other than judging Red Card 2018 winners.</p>
+            <div class="deadline">
+                Applications will close on the<br>
+                15th December 2017
+            </div>
+        </div>
+
+        <div class="form-section">
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email Address">
+            <input type="text" placeholder="Organisation">
+
+            <h3>Which Award</h3>
+            <p style="font-size: 0.7rem; margin-bottom: 20px;">(Please tick and provide details for all of the awards you would like to be nominated for)</p>
+
+            <div class="award-item">
+                <label class="award-label"><input type="checkbox" checked> Best Livestream</label>
+                <textarea rows="4" placeholder="Description & Results (max. 150 words)"></textarea>
+            </div>
+
+            <div class="award-item">
+                <label class="award-label"><input type="checkbox"> Best Tour Campaign</label>
+                <textarea rows="4" placeholder="Description & Results (max. 150 words)"></textarea>
+            </div>
+
+            <div class="award-item">
+                <label class="award-label"><input type="checkbox"> Best Sponsor Activation</label>
+                <textarea rows="4" placeholder="Description & Results (max. 150 words)"></textarea>
+            </div>
+
+            <div class="award-item">
+                <label class="award-label"><input type="checkbox"> Best Use of Technology</label>
+                <textarea rows="4" placeholder="Description & Results (max. 150 words)"></textarea>
+            </div>
+
+            <div class="award-item">
+                <label class="award-label"><input type="checkbox"> Best Online Campaign</label>
+                <textarea rows="4" placeholder="Description & Results (max. 150 words)"></textarea>
+            </div>
+            <button class="btn-success">
+                <span>✓</span> Submission Successful
+            </button>
+        </div>
+    </div>
+
+    <div class="corner-icon"></div>
+
+</body>
+</html>
