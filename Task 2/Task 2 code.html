@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catchub</title>
+
+    <link rel="icon" href="favicon.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #444;
+            background: white;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px;
+            text-align: center;
+        }
+
+        header img.logo {
+            width: 300px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 22px;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #777;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .buttons img {
+            height: 45px;
+        }
+
+        .hero {
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            padding: 80px 0;
+        }
+
+        .feature.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .feature img {
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .text {
+            text-align: left;
+        }
+
+        .text h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+        }
+
+        .text p {
+            color: #888;
+            font-size: 18px;
+        }
+
+        footer {
+            background: #f4f4f4;
+            padding: 80px 0;
+        }
+
+        .contact {
+            color: #3b99fc;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        @media (max-width: 800px) {
+
+            .feature,
+            .feature.reverse {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .text {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="container">
+        <img src="logo.png" class="logo" alt="Catchub">
+        <h1>WATCH. COMMUNICATE. CREATE.</h1>
+        <p class="subtitle">Everything you need to socialise</p>
+
+        <div class="buttons">
+            <img src="play_store.png" alt="Play Store">
+            <img src="app_store.png" alt="App Store">
+        </div>
+
+        <img src="top_screens.png" class="hero" alt="App Preview">
+    </header>
+
+    <section class="container feature">
+        <img src="sec_screens.png" alt="Channels">
+        <div class="text">
+            <h2>CHANNELS</h2>
+            <p>Enjoy videos and music you love.<br>Create your own channel.</p>
+        </div>
+    </section>
+
+    <section class="container feature reverse">
+        <img src="thhh_screens.png" alt="Messages">
+        <div class="text">
+            <h2>MESSAGES</h2>
+            <p>Chat easily.<br>Create group conversations.</p>
+        </div>
+    </section>
+
+    <section class="container feature">
+        <img src="for_screens.png" alt="Future">
+        <div class="text">
+            <h2>IN FUTURE</h2>
+            <p>More features coming soon.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>Download the app:</p>
+            <div class="buttons">
+                <img src="play_store.png" alt="Play Store">
+                <img src="app_store.png" alt="App Store">
+            </div>
+            <p>Any questions? <a href="#" class="contact">Contact Us</a></p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
