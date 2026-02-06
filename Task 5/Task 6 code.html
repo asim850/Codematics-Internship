@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahsan Portfolio</title>
+    <link rel="stylesheet" href="./dist/tailwind.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+  }
+</script>
+
+</head>
+
+<body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <nav class="flex items-center justify-between px-6 py-4 md:px-12 border-b border-gray-100 dark:border-gray-800">
+        <div class="text-2xl font-bold tracking-tighter">
+            &lt;SSC/&gt;
+        </div>
+
+        <div class="hidden md:flex items-center space-x-8 font-medium">
+            <a href="#" class="hover:text-gray-500 transition">About</a>
+            <a href="#" class="hover:text-gray-500 transition">Work</a>
+            <a href="#" class="hover:text-gray-500 transition">Testimonials</a>
+            <a href="#" class="hover:text-gray-500 transition">Contact</a>
+
+            <div class="h-6 w-[1px] bg-gray-300 dark:bg-gray-700"></div>
+
+            <button id="theme-toggle" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+                <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                        d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z">
+                    </path>
+                </svg>
+                <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                </svg>
+            </button>
+
+            <a href="#"
+                class="bg-gray-900 dark:bg-gray-100 dark:text-gray-900 text-white px-5 py-2 rounded-xl font-semibold hover:bg-gray-700 transition">
+                Download CV
+            </a>
+        </div>
+
+        <button id="mobile-menu-button" class="md:hidden p-2">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+    </nav>
+
+    <div id="mobile-menu"
+        class="hidden md:hidden flex-col space-y-4 px-6 py-4 border-b border-gray-100 bg-white dark:bg-gray-900 dark:border-gray-800">
+        <a href="#" class="block text-lg">About</a>
+        <a href="#" class="block text-lg">Work</a>
+        <a href="#" class="block text-lg">Testimonials</a>
+        <a href="#" class="block text-lg">Contact</a>
+        <button class="w-full bg-gray-900 text-white py-3 rounded-xl dark:bg-white dark:text-gray-900">Download
+            CV</button>
+    </div>
+
+
+    <main class="max-w-6xl mx-auto px-8 py-20">
+        <div class="flex flex-col-reverse md:flex-row items-center justify-between py-20">
+            <div class="md:w-2/3 mt-10 md:mt-0">
+                <h1 class="text-5xl font-bold mb-4">Hi, I'm Ahsan 👋</h1>
+                <p class="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-8 max-w-xl">
+                    I'm a full stack developer (React.js & Node.js) with a focus on creating (and occasionally
+                    designing) exceptional digital experiences...
+                </p>
+
+                <div class="space-y-2 mb-8">
+                    <div class="flex items-center text-gray-600 dark:text-gray-400">
+                        <img src="Icon.png" class="w-5 h-5 mr-3 dark:invert" alt="Location"> Abbottabad,
+                        Pakistan
+                    </div>
+                    <div class="flex items-center text-gray-600 dark:text-gray-400">
+                        <img src="Icon1.png" class="w-5 h-5 mr-3" alt="Status"> Available for new
+                        projects
+                    </div>
+                </div>
+
+                <div class="flex space-x-4 opacity-70">
+                    <a href="#"><img src="Icon2.png" class="w-6 h-6 dark:invert" alt="Github"></a>
+                    <a href="#"><img src="Icon3.png" class="w-6 h-6 dark:invert" alt="Twitter"></a>
+                    <a href="#"><img src="Icon4.png" class="w-6 h-6 dark:invert" alt="Figma"></a>
+                </div>
+            </div>
+
+            <div class="relative">
+                <div class="absolute top-4 left-4 w-full h-full bg-gray-200 dark:bg-gray-800 -z-10"></div>
+                <img src="profile.png" alt="Asim"
+                    class="w-72 h-80 object-cover border-8 border-white dark:border-gray-950 shadow-lg">
+            </div>
+        </div>
+
+        <section class="bg-gray-50 dark:bg-gray-900 py-24 px-8">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex justify-center mb-16">
+                    <span
+                        class="bg-gray-200 dark:bg-gray-800 px-5 py-1.5 rounded-full text-xs font-medium text-gray-600 dark:text-gray-300">
+                        About Me
+                    </span>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-20 items-center md:items-start">
+
+                    <div class="relative group">
+                        <div
+                            class="absolute -bottom-5 -left-5 w-full h-full bg-gray-200 dark:bg-gray-800 -z-10 transition-all group-hover:translate-x-1 group-hover:translate-y-1">
+                        </div>
+
+                        <div
+                            class="relative bg-white dark:bg-gray-950 p-2 border-8 border-white dark:border-gray-950 shadow-md">
+                            <img src="Pic Container.png" alt="About Me Asim"
+                                class="w-[400px] h-[480px] object-cover">
+                        </div>
+                    </div>
+
+                    <div class="flex-1">
+                        <h2 class="text-3xl font-bold mb-6 text-gray-900 dark:text-gray-50">
+                            Curious about me? Here you have it:
+                        </h2>
+
+                        <div class="space-y-4 text-gray-600 dark:text-gray-400 leading-relaxed text-base">
+                            <p>I'm a passionate, self-proclaimed designer who specializes in full stack development
+                                (React.js & Node.js)...</p>
+                            <p>I began my journey as a web developer in 2015, and since then, I've continued to grow...
+                            </p>
+                            <p>I am very much a progressive thinker and enjoy working on products end to end...</p>
+                            <p>When I am not a full stack developer You can find me on a twitter or a india hackar,
+                                witness the journey of early startupor enjoying some free time
+                            </p>
+                            <p>Finally, some quick bits about me.</p>
+
+                            <ul class="grid grid-cols-2 gap-y-3 pt-4">
+                                <li class="flex items-center gap-2">• B.E in Computer Engineering</li>
+                                <li class="flex items-center gap-2">• Avid Learner</li>
+                                <li class="flex items-center gap-2">• Full Time freelancer</li>
+                                <li class="flex items-center gap-2">• Aspiring Indie Hacker</li>
+                            </ul>
+
+                            <p class="pt-4">One last thing, I'm available for freelance work... I promise I don't bite!
+                                😋</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section class="py-24 px-8 bg-white dark:bg-gray-950 transition-colors">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex justify-center mb-4">
+                    <span
+                        class="bg-gray-200 dark:bg-gray-800 px-5 py-1.5 rounded-full text-xs font-medium text-gray-600 dark:text-gray-300">
+                        Skills
+                    </span>
+                </div>
+
+                <p class="text-center text-gray-600 dark:text-gray-400 mb-16 text-lg">
+                    The skills, tools and technologies I am really good at:
+                </p>
+
+                <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-y-12 gap-x-8">
+
+                    <div class="flex flex-col items-center group">
+                        <img src="icon-javscript.svg" alt="Javascript"
+                            class="w-16 h-16 object-contain mb-2 transition-transform group-hover:scale-110">
+                        <span class="text-gray-600 dark:text-gray-400 text-sm">javascript</span>
+                    </div>
+
+                    <div class="flex flex-col items-center group">
+                        <img src="icon-typescript.svg" alt="Typescript"
+                            class="w-16 h-16 object-contain mb-2 transition-transform group-hover:scale-110">
+                        <span class="text-gray-600 dark:text-gray-400 text-sm">Typescript</span>
+                    </div>
+
+                    <div class="flex flex-col items-center group">
+                        <img src="icon-react.svg" alt="React"
+                            class="w-16 h-16 object-contain mb-2 transition-transform group-hover:scale-110">
+                        <span class="text-gray-600 dark:text-gray-400 text-sm">React</span>
+                    </div>
+
+                    <div class="flex flex-col items-center group">
+                        <img src="icon-nextjs.svg" alt="Next.js"
+                            class="w-16 h-16 object-contain mb-2 dark:invert transition-transform group-hover:scale-110">
+                        <span class="text-gray-600 dark:text-gray-400 text-sm">Next.js</span>
+                    </div>
+
+                    <div class="flex flex-col items-center group">
+                        <img src="icon-nodejs.svg" alt="Node.js"
+                            class="w-16 h-16 object-contain mb-2 transition-transform group-hover:scale-110">
+                        <span class="text-gray-600 dark:text-gray-400 text-sm">Node.js</span>
+                    </div>
+
+                    <div class="flex flex-col items-center group">
+                        <img src="icon-express.svg" alt="Express.js"
+                            class="w-16 h-16 object-contain mb-2 dark:invert transition-transform group-hover:scale-110">
+                        <span class="text-gray-600 dark:text-gray-400 text-sm">Express.js</span>
+                    </div>
+
+                    <div class="flex flex-col items-center group">
+                        <img src="icon-nest.svg" alt="Nest.js"
+                            class="w-16 h-16 object-contain mb-2 transition-transform group-hover:scale-110">
+                        <span class="text-gray-600 dark:text-gray-400 text-sm">Nest.js</span>
+                    </div>
+
+                    <div class="flex flex-col items-center group">
+                        <img src="icon-socket.svg" alt="Socket.io"
+                            class="w-16 h-16 object-contain mb-2 dark:invert transition-transform group-hover:scale-110">
+                        <span class="text-gray-600 dark:text-gray-400 text-sm">Socket.io</span>
+                    </div>
+
+                    <div class="flex flex-col items-center group">
+                        <img src="icon-postgresql.svg" alt="PostgreSQL"
+                            class="w-16 h-16 object-contain mb-2 transition-transform group-hover:scale-110">
+                        <span class="text-gray-600 dark:text-gray-400 text-sm">PostgreSQL</span>
+                    </div>
+
+                    <div class="flex flex-col items-center group">
+                        <img src="icon-mongodb.svg" alt="MongoDB"
+                            class="w-16 h-16 object-contain mb-2 transition-transform group-hover:scale-110">
+                        <span class="text-gray-600 dark:text-gray-400 text-sm">MongoDB</span>
+                    </div>
+
+                    <div class="flex flex-col items-center group">
+                        <img src="icon-sass.svg" alt="Sass"
+                            class="w-16 h-16 object-contain mb-2 transition-transform group-hover:scale-110">
+                        <span class="text-gray-600 dark:text-gray-400 text-sm">Sass/Scss</span>
+                    </div>
+
+                    <div class="flex flex-col items-center group">
+                        <img src="icon-tailwindcss.svg" alt="Tailwindcss"
+                            class="w-16 h-16 object-contain mb-2 transition-transform group-hover:scale-110">
+                        <span class="text-gray-600 dark:text-gray-400 text-sm">Tailwindcss</span>
+                    </div>
+
+                    <div class="flex flex-col items-center group">
+                        <img src="icon-figma.svg" alt="Figma"
+                            class="w-16 h-16 object-contain mb-2 transition-transform group-hover:scale-110">
+                        <span class="text-gray-600 dark:text-gray-400 text-sm">Figma</span>
+                    </div>
+
+                    <div class="flex flex-col items-center group">
+                        <img src="icon-cypress.svg" alt="Cypress"
+                            class="w-16 h-16 object-contain mb-2 dark:invert transition-transform group-hover:scale-110">
+                        <span class="text-gray-600 dark:text-gray-400 text-sm">Cypress</span>
+                    </div>
+
+                    <div class="flex flex-col items-center group">
+                        <img src="icon-storybook.svg" alt="Storybook"
+                            class="w-16 h-16 object-contain mb-2 transition-transform group-hover:scale-110">
+                        <span class="text-gray-600 dark:text-gray-400 text-sm">Storybook</span>
+                    </div>
+
+                    <div class="flex flex-col items-center group">
+                        <img src="icon-git.svg" alt="Github"
+                            class="w-16 h-16 object-contain mb-2 dark:invert transition-transform group-hover:scale-110">
+                        <span class="text-gray-600 dark:text-gray-400 text-sm">Github</span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section class="bg-gray-50 dark:bg-gray-900 py-24 px-8 transition-colors">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex flex-col items-center mb-12">
+                    <span
+                        class="bg-gray-200 dark:bg-gray-800 px-5 py-1.5 rounded-full text-xs font-medium text-gray-600 dark:text-gray-300 mb-4">
+                        Experience
+                    </span>
+                    <p class="text-gray-600 dark:text-gray-400 text-center text-lg">
+                        Here is a quick summary of my most recent experiences:
+                    </p>
+                </div>
+
+                <div class="space-y-12">
+
+                    <div
+                        class="bg-white dark:bg-gray-950 p-8 rounded-xl shadow-sm flex flex-col md:flex-row justify-between gap-8 transition-all hover:shadow-md">
+                        <div class="flex-shrink-0">
+                            <img src="logo-upwork.png" alt="Upwork" class="h-8 w-auto">
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4">Sr. Frontend Developer
+                            </h3>
+                            <ul class="list-disc list-outside ml-4 space-y-2 text-gray-600 dark:text-gray-400 text-sm">
+                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                                <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco.</li>
+                                <li>Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+                                <li>Excepteur sint occaecat cupidatat non proident.</li>
+                            </ul>
+                        </div>
+                        <div class="text-gray-500 dark:text-gray-400 text-sm whitespace-nowrap">
+                            Nov 2021 - Present
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-white dark:bg-gray-950 p-8 rounded-xl shadow-sm flex flex-col md:flex-row justify-between gap-8 transition-all hover:shadow-md">
+                        <div class="flex-shrink-0">
+                            <img src="logo-upwork.png" alt="Upwork" class="h-8 w-auto">
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4">Team Lead</h3>
+                            <ul class="list-disc list-outside ml-4 space-y-2 text-gray-600 dark:text-gray-400 text-sm">
+                                <li>Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</li>
+                                <li>Accusantium doloremque laudantium, totam rem aperiam.</li>
+                                <li>Eaque ipsa quae ab illo inventore veritatis et quasi.</li>
+                            </ul>
+                        </div>
+                        <div class="text-gray-500 dark:text-gray-400 text-sm whitespace-nowrap">
+                            July 2017 - Oct 2021
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-white dark:bg-gray-950 p-8 rounded-xl shadow-sm flex flex-col md:flex-row justify-between gap-8 transition-all hover:shadow-md">
+                        <div class="flex-shrink-0">
+                            <img src="logo-upwork.png" alt="Upwork" class="h-8 w-auto">
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4">Full Stack Developer
+                            </h3>
+                            <ul class="list-disc list-outside ml-4 space-y-2 text-gray-600 dark:text-gray-400 text-sm">
+                                <li>At vero eos et accusamus et iusto odio dignissimos ducimus.</li>
+                                <li>Qui blanditiis praesentium voluptatum deleniti atque corrupti.</li>
+                            </ul>
+                        </div>
+                        <div class="text-gray-500 dark:text-gray-400 text-sm whitespace-nowrap">
+                            Dec 2015 - May 2017
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section class="py-24 px-8 bg-white dark:bg-gray-950 transition-colors">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex flex-col items-center mb-16">
+                    <span
+                        class="bg-gray-200 dark:bg-gray-800 px-5 py-1.5 rounded-full text-xs font-medium text-gray-600 dark:text-gray-300 mb-4">
+                        Work
+                    </span>
+                    <p class="text-gray-600 dark:text-gray-400 text-center text-lg">
+                        Some of the noteworthy projects I have built:
+                    </p>
+                </div>
+
+                <div class="space-y-24">
+
+                    <div
+                        class="flex flex-col lg:flex-row rounded-2xl overflow-hidden shadow-sm border dark:border-gray-800">
+                        <div class="lg:w-1/2 bg-gray-50 dark:bg-gray-800 p-8 lg:p-12 flex items-center justify-center">
+                            <img src="Picture.png" alt="Fiskil Project"
+                                class="rounded-xl shadow-2xl hover:scale-105 transition-transform duration-500">
+                        </div>
+
+                        <div class="lg:w-1/2 p-8 lg:p-12 bg-white dark:bg-gray-950">
+                            <h3 class="text-2xl font-bold mb-6 text-gray-900 dark:text-gray-100">Fiskil</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa tempore repellendus
+                                veniam minus fugit fugiat adipisci aut ex ut aperiam?
+                            </p>
+
+                            <div class="flex flex-wrap gap-2 mb-8">
+                                <span
+                                    class="bg-gray-100 dark:bg-gray-800 px-4 py-1 rounded-full text-sm font-medium">React</span>
+                                <span
+                                    class="bg-gray-100 dark:bg-gray-800 px-4 py-1 rounded-full text-sm font-medium">Next.js</span>
+                                <span
+                                    class="bg-gray-100 dark:bg-gray-800 px-4 py-1 rounded-full text-sm font-medium">Typescript</span>
+                                <span
+                                    class="bg-gray-100 dark:bg-gray-800 px-4 py-1 rounded-full text-sm font-medium">Nest.js</span>
+                                <span
+                                    class="bg-gray-100 dark:bg-gray-800 px-4 py-1 rounded-full text-sm font-medium">PostgreSQL</span>
+                                <span
+                                    class="bg-gray-100 dark:bg-gray-800 px-4 py-1 rounded-full text-sm font-medium">Tailwindcss</span>
+                                <span
+                                    class="bg-gray-100 dark:bg-gray-800 px-4 py-1 rounded-full text-sm font-medium">Figma</span>
+                                <span
+                                    class="bg-gray-100 dark:bg-gray-800 px-4 py-1 rounded-full text-sm font-medium">Cypress</span>
+                                <span
+                                    class="bg-gray-100 dark:bg-gray-800 px-4 py-1 rounded-full text-sm font-medium">Storybook</span>
+                                <span
+                                    class="bg-gray-100 dark:bg-gray-800 px-4 py-1 rounded-full text-sm font-medium">Git</span>
+                            </div>
+
+                            <a href="#" class="inline-block hover:opacity-70 transition-opacity">
+                                <img src="Icon Button.png" alt="View Project"
+                                    class="w-6 h-6 dark:invert">
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="space-y-24">
+
+                <div
+                    class="flex flex-col lg:flex-row rounded-2xl overflow-hidden shadow-sm border dark:border-gray-800">
+                    <div class="lg:w-1/2 bg-gray-50 dark:bg-gray-800 p-8 lg:p-12 flex items-center justify-center">
+                        <img src="Picture.png" alt="Fiskil Project"
+                            class="rounded-xl shadow-2xl hover:scale-105 transition-transform duration-500">
+                    </div>
+
+                    <div class="lg:w-1/2 p-8 lg:p-12 bg-white dark:bg-gray-950">
+                        <h3 class="text-2xl font-bold mb-6 text-gray-900 dark:text-gray-100">Fiskil</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla culpa itaque reiciendis
+                            aspernatur natus eaque omnis ullam veritatis et quibusdam?
+                        </p>
+
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span
+                                class="bg-gray-100 dark:bg-gray-800 px-4 py-1 rounded-full text-sm font-medium">React</span>
+                            <span
+                                class="bg-gray-100 dark:bg-gray-800 px-4 py-1 rounded-full text-sm font-medium">Next.js</span>
+                            <span
+                                class="bg-gray-100 dark:bg-gray-800 px-4 py-1 rounded-full text-sm font-medium">Typescript</span>
+                            <span
+                                class="bg-gray-100 dark:bg-gray-800 px-4 py-1 rounded-full text-sm font-medium">Nest.js</span>
+                            <span
+                                class="bg-gray-100 dark:bg-gray-800 px-4 py-1 rounded-full text-sm font-medium">PostgreSQL</span>
+                            <span
+                                class="bg-gray-100 dark:bg-gray-800 px-4 py-1 rounded-full text-sm font-medium">Tailwindcss</span>
+                            <span
+                                class="bg-gray-100 dark:bg-gray-800 px-4 py-1 rounded-full text-sm font-medium">Figma</span>
+                            <span
+                                class="bg-gray-100 dark:bg-gray-800 px-4 py-1 rounded-full text-sm font-medium">Cypress</span>
+                            <span
+                                class="bg-gray-100 dark:bg-gray-800 px-4 py-1 rounded-full text-sm font-medium">Storybook</span>
+                            <span
+                                class="bg-gray-100 dark:bg-gray-800 px-4 py-1 rounded-full text-sm font-medium">Git</span>
+                        </div>
+
+                        <a href="#" class="inline-block hover:opacity-70 transition-opacity">
+                            <img src="Icon Button.png" alt="View Project" class="w-6 h-6 dark:invert">
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            </div>
+
+
+
+
+            <div class="space-y-24">
+
+                <div
+                    class="flex flex-col lg:flex-row rounded-2xl overflow-hidden shadow-sm border dark:border-gray-800">
+                    <div class="lg:w-1/2 bg-gray-50 dark:bg-gray-800 p-8 lg:p-12 flex items-center justify-center">
+                        <img src="Picture.png" alt="Fiskil Project"
+                            class="rounded-xl shadow-2xl hover:scale-105 transition-transform duration-500">
+                    </div>
+
+                    <div class="lg:w-1/2 p-8 lg:p-12 bg-white dark:bg-gray-950">
+                        <h3 class="text-2xl font-bold mb-6 text-gray-900 dark:text-gray-100">Fiskil</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum assumenda nobis culpa,
+                            facilis fuga iure quis sequi omnis saepe deserunt!
+                        </p>
+
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span
+                                class="bg-gray-100 dark:bg-gray-800 px-4 py-1 rounded-full text-sm font-medium">React</span>
+                            <span
+                                class="bg-gray-100 dark:bg-gray-800 px-4 py-1 rounded-full text-sm font-medium">Next.js</span>
+                            <span
+                                class="bg-gray-100 dark:bg-gray-800 px-4 py-1 rounded-full text-sm font-medium">Typescript</span>
+                            <span
+                                class="bg-gray-100 dark:bg-gray-800 px-4 py-1 rounded-full text-sm font-medium">Nest.js</span>
+                            <span
+                                class="bg-gray-100 dark:bg-gray-800 px-4 py-1 rounded-full text-sm font-medium">PostgreSQL</span>
+                            <span
+                                class="bg-gray-100 dark:bg-gray-800 px-4 py-1 rounded-full text-sm font-medium">Tailwindcss</span>
+                            <span
+                                class="bg-gray-100 dark:bg-gray-800 px-4 py-1 rounded-full text-sm font-medium">Figma</span>
+                            <span
+                                class="bg-gray-100 dark:bg-gray-800 px-4 py-1 rounded-full text-sm font-medium">Cypress</span>
+                            <span
+                                class="bg-gray-100 dark:bg-gray-800 px-4 py-1 rounded-full text-sm font-medium">Storybook</span>
+                            <span
+                                class="bg-gray-100 dark:bg-gray-800 px-4 py-1 rounded-full text-sm font-medium">Git</span>
+                        </div>
+
+                        <a href="#" class="inline-block hover:opacity-70 transition-opacity">
+                            <img src="Icon Button.png" alt="View Project" class="w-6 h-6 dark:invert">
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            </div>
+        </section>
+        <section class="bg-gray-50 dark:bg-gray-900 py-24 px-8 transition-colors">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex flex-col items-center mb-16">
+                    <span
+                        class="bg-gray-200 dark:bg-gray-800 px-5 py-1.5 rounded-full text-xs font-medium text-gray-600 dark:text-gray-300 mb-4">
+                        Testimonials
+                    </span>
+                    <p class="text-gray-600 dark:text-gray-400 text-center text-lg">
+                        Nice things people said about me.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                    <div
+                        class="bg-white dark:bg-gray-950 p-10 rounded-2xl shadow-sm flex flex-col items-center text-center transition-all hover:shadow-md">
+                        <div
+                            class="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mb-6 overflow-hidden">
+                            <img src="icon-user.png" alt="Client Avatar"
+                                class="w-10 h-10 object-contain dark:invert">
+                        </div>
+
+                        <p class="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+                            "Job well done! I am really impressed. He is very very good at what he does :) I would
+                            recommend Sagar and will rehire in the future for Frontend development."
+                        </p>
+
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-900 dark:text-gray-100">John Doe</h4>
+                            <p class="text-sm text-gray-500 dark:text-gray-500">Founder xyz.com</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-white dark:bg-gray-950 p-10 rounded-2xl shadow-sm flex flex-col items-center text-center transition-all hover:shadow-md">
+                        <div
+                            class="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mb-6 overflow-hidden">
+                            <img src="icon-user.png" alt="Client Avatar"
+                                class="w-10 h-10 object-contain dark:invert">
+                        </div>
+
+                        <p class="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+                            "Job well done! I am really impressed. He is very very good at what he does :) I would
+                            recommend Sagar and will rehire in the future for Frontend development."
+                        </p>
+
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-900 dark:text-gray-100">John Doe</h4>
+                            <p class="text-sm text-gray-500 dark:text-gray-500">Founder xyz.com</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-white dark:bg-gray-950 p-10 rounded-2xl shadow-sm flex flex-col items-center text-center transition-all hover:shadow-md">
+                        <div
+                            class="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mb-6 overflow-hidden">
+                            <img src="icon-user.png" alt="Client Avatar"
+                                class="w-10 h-10 object-contain dark:invert">
+                        </div>
+
+                        <p class="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+                            "Job well done! I am really impressed. He is very very good at what he does :) I would
+                            recommend Sagar and will rehire in the future for Frontend development."
+                        </p>
+
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-900 dark:text-gray-100">John Doe</h4>
+                            <p class="text-sm text-gray-500 dark:text-gray-500">Founder xyz.com</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="pt-20 pb-10 px-4 bg-white dark:bg-gray-950 transition-colors">
+            <div class="max-w-4xl mx-auto flex flex-col items-center">
+                <span
+                    class="bg-gray-100 dark:bg-gray-800 px-4 py-1 rounded-full text-xs font-medium text-gray-600 dark:text-gray-300 mb-4">
+                    Contact
+                </span>
+
+                <p class="text-center text-gray-600 dark:text-gray-400 mb-8 max-w-lg">
+                    What's next? Feel free to reach out to me if you're looking for a developer, have a query, or simply
+                    want to connect.
+                </p>
+
+                <div class="flex flex-col items-center gap-2 mb-8">
+                    <div class="flex items-center gap-3">
+                        <img src="email.png" alt="Email" class="w-6 h-6 dark:invert">
+                        <span
+                            class="text-xl md:text-3xl font-bold text-gray-900 dark:text-gray-100">abcd@gmail.com</span>
+                        <button class="p-1 hover:bg-gray-100 dark:hover:bg-gray-800 rounded">
+                            <img src="box.png" alt="Copy" class="w-6 h-6 dark:invert">
+                        </button>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <img src="mob.png" alt="Phone" class="w-6 h-6 dark:invert">
+                        <span class="text-xl md:text-3xl font-bold text-gray-900 dark:text-gray-100">+92
+                            3312843489</span>
+                        <button class="p-1 hover:bg-gray-100 dark:hover:bg-gray-800 rounded">
+                            <img src="box.png" alt="Copy" class="w-6 h-6 dark:invert">
+                        </button>
+                    </div>
+                </div>
+
+                <div class="flex flex-col items-center gap-3">
+                    <p class="text-sm text-gray-600 dark:text-gray-400">You may also find me on these platforms</p>
+                    <div class="flex items-center gap-4">
+                        <a href="#"><img src="Icon2.png" class="w-5 h-5 dark:invert" alt="Github"></a>
+                        <a href="#"><img src="Icon3.png" class="w-5 h-5 dark:invert" alt="Twitter"></a>
+                        <a href="#"><img src="Icon4.png" class="w-5 h-5 dark:invert" alt="Figma"></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="py-4 bg-gray-50 dark:bg-gray-900 border-t dark:border-gray-800 transition-colors">
+        <div class="flex justify-center items-center text-xs md:text-sm text-gray-500 dark:text-gray-400">
+            <div class="flex items-center gap-1">
+                <img src="vecto2.png" alt="Copyright" class="w-3.5 h-3.5 dark:invert opacity-50">
+                <p>2026 | Designed and coded with <span class="text-red-500">❤️</span> by Asim Nawaz</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const darkIcon = document.getElementById('theme-toggle-dark-icon');
+        const lightIcon = document.getElementById('theme-toggle-light-icon');
+
+
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            lightIcon.classList.remove('hidden');
+        } else {
+            darkIcon.classList.remove('hidden');
+        }
+
+        themeToggleBtn.addEventListener('click', function () {
+            document.documentElement.classList.toggle('dark');
+            darkIcon.classList.toggle('hidden');
+            lightIcon.classList.toggle('hidden');
+
+            if (document.documentElement.classList.contains('dark')) {
+                localStorage.setItem('color-theme', 'dark');
+            } else {
+                localStorage.setItem('color-theme', 'light');
+            }
+        });
+
+
+        const menuBtn = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+    </script>
+</body>
+
+</html>
