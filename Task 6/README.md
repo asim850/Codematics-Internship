@@ -1,6 +1,6 @@
-# Personal Portfolio Website
+# Personal Portfolio Webpage
 
-A modern, responsive personal portfolio website built using **HTML** and **Tailwind CSS**.  
+A modern, responsive personal portfolio webpage built using **HTML** and **Tailwind CSS**.  
 It includes dark mode support, smooth UI interactions, and multiple sections to showcase skills, experience, and projects.
 
 ## 📌 Features
