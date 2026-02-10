@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Converters & Logic</title>
+    <style>
+        :root {
+            --primary-color: #6a11cb;
+            --secondary-color: #2575fc;
+            --accent-color: #00d2ff;
+            --text-color: #333;
+            --bg-color: #f4f7f6;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 40px 20px;
+            gap: 20px;
+        }
+
+        .container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h1 {
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+        }
+
+        .input-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: var(--secondary-color);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .result {
+            margin-top: 1.5rem;
+            font-size: 1.1rem;
+            color: var(--text-color);
+            word-wrap: break-word;
+        }
+
+        .highlight {
+            color: var(--secondary-color);
+            font-weight: 800;
+            font-size: 1.6rem;
+            display: block;
+            margin-top: 5px;
+        }
+
+        .array-display {
+            background: #eee;
+            padding: 5px;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Age to Days Converter</h1>
+        <div class="input-group">
+            <label for="dob">Select Date of Birth:</label>
+            <input type="date" id="dob">
+        </div>
+        <button onclick="calculateDays()">Convert to Days</button>
+        <div id="days-result" class="result"></div>
+    </div>
+
+    <div class="container">
+        <h1>Hours to Seconds</h1>
+        <div class="input-group">
+            <label for="hoursInput">Enter Hours:</label>
+            <input type="number" id="hoursInput" placeholder="e.g. 5" step="any">
+        </div>
+        <button onclick="convertHoursToSeconds()">Convert to Seconds</button>
+        <div id="seconds-result" class="result"></div>
+    </div>
+
+    <div class="container">
+        <h1>Find Next in Array</h1>
+        <span class="array-display">Current Array: [10, 20, 30, 40, 50]</span>
+        <div class="input-group">
+            <label for="arraySearch">Enter a number from the list:</label>
+            <input type="number" id="arraySearch" placeholder="e.g. 20">
+        </div>
+        <button onclick="findNextInArray()">Find Next</button>
+        <div id="array-result" class="result"></div>
+    </div>
+
+    <div class="container">
+        <h1>Next Number (Logic)</h1>
+        <div class="input-group">
+            <label for="logicInput">Enter any Number:</label>
+            <input type="text" id="logicInput" placeholder="e.g. 5 or 5.5">
+        </div>
+        <button onclick="findNextLogic()">Find Next Value</button>
+        <div id="logic-result" class="result"></div>
+    </div>
+    <div class="container">
+        <h1>First Letter Capital</h1>
+        <div class="input-group">
+            <label for="capitalization">Enter name (lowercase):</label>
+            <input type="text" id="capitalization" placeholder="e.g. asim">
+        </div>
+        <button onclick="capitalize()">Capitalize</button>
+        <div id="cap-result" class="result"></div>
+    </div>
+    <div class="container">
+        <h1>BMI Calculator</h1>
+        <div class="input-group">
+            <label for="weight">Weight (kg):</label>
+            <input type="number" id="weight" placeholder="e.g. 70" step="any">
+        </div>
+        <div class="input-group">
+            <label for="height">Height (cm):</label>
+            <input type="number" id="height" placeholder="e.g. 175" step="any">
+        </div>
+        <button onclick="calculateBMI()">Calculate BMI</button>
+        <div id="bmi-result" class="result"></div>
+    </div>
+    <div class="container">
+        <h1>Random Array Picker</h1>
+        <div class="input-group">
+            <button onclick="generateRandomArray()" style="background: var(--accent-color); margin-bottom: 10px;">
+                Step 1: Generate Random Array
+            </button>
+            <span id="array-display" class="array-display">Array: [ ]</span>
+        </div>
+
+        <button onclick="pickFirstAndLast()">Step 2: Pick 1st & Last</button>
+        <div id="picker-result" class="result"></div>
+    </div>
+    <div class="container">
+        <h1>Live Addition</h1>
+        <div class="input-group">
+            <label for="num1">First Number:</label>
+            <input type="number" id="num1" placeholder="Enter integer">
+        </div>
+        <div class="input-group">
+            <label for="num2">Second Number:</label>
+            <input type="number" id="num2" placeholder="Enter integer">
+        </div>
+        <div class="input-group">
+            <label for="num3">Result (Sum):</label>
+            <input type="text" id="num3" readonly placeholder="Result will appear here">
+        </div>
+        <p style="font-size: 0.8rem; color: #666;">Note: Result shows NaN until both numbers are present.</p>
+    </div>
+    <script>
+        function calculateDays() {
+            const dateInput = document.getElementById('dob').value;
+            const resultDiv = document.getElementById('days-result');
+            if (!dateInput) { resultDiv.innerHTML = 'Select a date.'; return; }
+            const dob = new Date(dateInput);
+            const today = new Date();
+            if (dob > today) { resultDiv.innerHTML = 'Date is in the future!'; return; }
+            const days = Math.floor((today - dob) / (1000 * 3600 * 24));
+            resultDiv.innerHTML = `Days lived: <span class="highlight">${days.toLocaleString()}</span>`;
+        }
+
+        function convertHoursToSeconds() {
+            const hours = document.getElementById('hoursInput').value;
+            const resultDiv = document.getElementById('seconds-result');
+            if (hours === "") return;
+            const seconds = hours * 3600;
+            resultDiv.innerHTML = `Result: <span class="highlight">${seconds.toLocaleString()} seconds</span>`;
+        }
+
+        function findNextInArray() {
+            const myNumbers = [10, 20, 30, 40, 50];
+            const input = parseInt(document.getElementById('arraySearch').value);
+            const resultDiv = document.getElementById('array-result');
+
+            const index = myNumbers.indexOf(input);
+
+            if (index === -1) {
+                resultDiv.innerHTML = "Number not found in array.";
+            } else if (index === myNumbers.length - 1) {
+                resultDiv.innerHTML = "That is the last number! No 'next' exists.";
+            } else {
+                const nextNum = myNumbers[index + 1];
+                resultDiv.innerHTML = `Next number is: <span class="highlight">${nextNum}</span>`;
+            }
+        }
+
+        function findNextLogic() {
+            const inputVal = document.getElementById('logicInput').value;
+            const resultDiv = document.getElementById('logic-result');
+
+            if (inputVal === "") { resultDiv.innerHTML = "Enter a value."; return; }
+
+            const num = parseFloat(inputVal);
+            if (Number.isInteger(num)) {
+                const nextInt = num + 1;
+                resultDiv.innerHTML = `Detected: Integer <span class="highlight">${nextInt}</span>`;
+            } else {
+                const nextFloat = (num + 0.1).toFixed(1);
+                resultDiv.innerHTML = `Detected: Float <span class="highlight">${nextFloat}</span>`;
+            }
+        }
+        function capitalize() {
+            const inputVal = document.getElementById('capitalization').value.trim();
+            const resultDiv = document.getElementById('cap-result');
+
+            if (inputVal === "") {
+                resultDiv.innerHTML = "Please enter a name.";
+                return;
+            }
+
+            const capitalizedName = inputVal.charAt(0).toUpperCase() + inputVal.slice(1).toLowerCase();
+
+            resultDiv.innerHTML = `Formatted Name: <span class="highlight">${capitalizedName}</span>`;
+        }
+        function calculateBMI() {
+            const weight = parseFloat(document.getElementById('weight').value);
+            const heightCm = parseFloat(document.getElementById('height').value);
+            const resultDiv = document.getElementById('bmi-result');
+
+            if (!weight || !heightCm || weight <= 0 || heightCm <= 0) {
+                resultDiv.innerHTML = "Please enter valid weight and height.";
+                return;
+            }
+
+            const heightM = heightCm / 100;
+
+            const bmi = (weight / (heightM * heightM)).toFixed(1);
+
+            let category = "";
+            if (bmi < 18.5) {
+                category = "Underweight";
+            } else if (bmi >= 18.5 && bmi <= 24.9) {
+                category = "Normal weight";
+            } else if (bmi >= 25 && bmi <= 29.9) {
+                category = "Overweight";
+            } else {
+                category = "Obese";
+            }
+
+            resultDiv.innerHTML = `Your BMI is <span class="highlight">${bmi}</span> Status: <strong>${category}</strong>`;
+        }
+        let currentRandomArray = [];
+        function generateRandomArray() {
+            const arraySize = Math.floor(Math.random() * 4) + 5;
+            currentRandomArray = [];
+
+            for (let i = 0; i < arraySize; i++) {
+                currentRandomArray.push(Math.floor(Math.random() * 100) + 1);
+            }
+
+            document.getElementById('array-display').innerText = `Array: [${currentRandomArray.join(", ")}]`;
+            document.getElementById('picker-result').innerHTML = "";
+        }
+
+        function pickFirstAndLast() {
+            const resultDiv = document.getElementById('picker-result');
+
+            if (currentRandomArray.length === 0) {
+                resultDiv.innerHTML = "Please generate an array first!";
+                return;
+            }
+
+            const first = currentRandomArray[0];
+            const last = currentRandomArray[currentRandomArray.length - 1];
+
+            resultDiv.innerHTML = `
+                First Element: <span class="highlight">${first}</span>
+                Last Element: <span class="highlight">${last}</span>
+            `;
+        }
+        const input1 = document.getElementById('num1');
+        const input2 = document.getElementById('num2');
+        const resultBox = document.getElementById('num3');
+
+        function performAddition() {
+            const val1 = parseInt(input1.value);
+            const val2 = parseInt(input2.value);
+
+            const sum = val1 + val2;
+
+            resultBox.value = sum;
+        }
+
+        input1.addEventListener('input', performAddition);
+        input2.addEventListener('input', performAddition);
+    </script>
+</body>
+
+</html>
